@@ -35,7 +35,19 @@ const getLibri = function () {
         buttonaggiungi.addEventListener("click", function () {
           const carrello = document.getElementById("carrello");
           const libro = document.createElement("li");
-          libro.innerText = `titolo : ${book.title}`;
+
+          card.classList.add("col-12", "col-md-4", "col-xl-3");
+          libro.innerHTML = `
+          <div class="card" style="width: 10rem;" id="card">
+
+            <img src="${book.img}" class="card-img-top" alt="..." />
+            <div class="card-body">
+              <h5 class="card-title ">${book.title}</h5>
+              <p class="card-text">
+                HAI SPESO : ${book.price} EURO
+              </p>
+            </div>`;
+          //   libro.innerHTML = `titolo : ${book.title}`;
           carrello.appendChild(libro);
         });
       });
